@@ -84,5 +84,9 @@ class TicTacToe
   def over?
     draw? || won?
   end
+  
+  def winner
+    
+  end
 
 end
