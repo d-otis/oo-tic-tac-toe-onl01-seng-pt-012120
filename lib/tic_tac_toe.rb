@@ -76,5 +76,9 @@ class TicTacToe
   def full?
     true if @board.all? {|i| i == "X" || i == "O"}
   end
+  
+  def draw?
+    false if full? && !won?
+  end
 
 end
