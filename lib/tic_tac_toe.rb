@@ -76,5 +76,30 @@ class TicTacToe
   def full?
     true if @board.all? {|i| i == "X" || i == "O"}
   end
+  
+  def draw?
+    !won? && full?
+  end
+  
+  def over?
+    draw? || won?
+  end
+  
+  def winner
+    (turn_count % 2 != 0 ? "X" : "O") if won?
+  end
+  
+  def play
+    until over?
+      turn
+    end
+    
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
+      puts "Cat's Game!"
+    end
+    
+  end
 
 end
